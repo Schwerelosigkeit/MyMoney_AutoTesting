@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="MyMoney Auto Tests" verbose="1" parallel="none" thread-count="1">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+<!--    <test name="All UI Tests">-->
+<!--        <packages><package name="ui.tests"/></packages>-->
+<!--    </test>-->
+
+<!--    <test name="Initial Values Tests">-->
+<!--        <groups><run><include name="initial-values"/></run></groups>-->
+<!--        <packages><package name="ui.tests"/></packages>-->
+<!--    </test>-->
+
+<!--    <test name="Main Page Tests">-->
+<!--        <groups><run><include name="main-page"/></run></groups>-->
+<!--        <packages><package name="ui.tests"/></packages>-->
+<!--    </test>-->
+
+<!--    <test name="Income Tests">-->
+<!--        <groups><run><include name="income"/></run></groups>-->
+<!--        <packages><package name="ui.tests"/></packages>-->
+<!--    </test>-->
+
+<!--    <test name="Expense Tests">-->
+<!--        <groups><run><include name="expense"/></run></groups>-->
+<!--        <packages><package name="ui.tests"/></packages>-->
+<!--    </test>-->
+
+<!--    <test name="Visibility Tests">-->
+<!--        <groups><run><include name="visibility"/></run></groups>-->
+<!--        <packages><package name="ui.tests"/></packages>-->
+<!--    </test>-->
+
+<!--    <test name="UI Random Data Tests">-->
+<!--        <groups><run><include name="random"/></run></groups>-->
+<!--        <packages><package name="ui.tests"/></packages>-->
+<!--    </test>-->
+
+    <test name="UI Negative Tests">
+        <groups><run><include name="negative-tests"/></run></groups>
+        <packages><package name="ui.tests"/></packages>
+    </test>
+
+    <test name="UI Positive Tests">
+        <groups><run><include name="positive-tests"/></run></groups>
+        <packages><package name="ui.tests"/></packages>
+    </test>
+
+    <test name="API Tests">
+        <groups><run><include name="api"/></run></groups>
+        <packages><package name="api"/></packages>
+    </test>
+
+<!--    <test name="Initial API Tests">-->
+<!--        <groups><run><include name="initial-values"/></run></groups>-->
+<!--        <packages><package name="api"/></packages>-->
+<!--    </test>-->
+<!--    -->
+<!--    <test name="API Positive Tests">-->
+<!--        <groups><run><include name="positive-tests"/></run></groups>-->
+<!--        <packages><package name="api"/></packages>-->
+<!--    </test>-->
+
+<!--    <test name="API Negative Tests">-->
+<!--        <groups><run><include name="negative-tests"/></run></groups>-->
+<!--        <packages><package name="api"/></packages>-->
+<!--    </test>-->
+
+</suite>
