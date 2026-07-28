@@ -9,14 +9,16 @@ public class BaseTest {
     @BeforeSuite(alwaysRun = true)
     void globalSetUp() {
 
-        Configuration.baseUrl = "http://localhost:8080";
+        Configuration.baseUrl = "https://mymoney-webapp.onrender.com";
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
 
         Configuration.timeout = 10000;
         Configuration.pageLoadTimeout = 10000;
 
-        Configuration.headless = false;
+        Configuration.headless = Boolean.parseBoolean(
+                System.getProperty("headless", "false")
+        );
         Configuration.fastSetValue = false;
         Configuration.holdBrowserOpen = false;
 
