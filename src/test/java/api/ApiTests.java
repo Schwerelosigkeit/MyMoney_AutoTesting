@@ -34,7 +34,7 @@ public class ApiTests extends BaseApiTest {
                 .statusCode(200)
                 .contentType(containsString("text/html"))
                 .body(containsString("<!doctype html>"))
-                .body(containsString("<title>static</title>"))
+                .body(containsString("<title>MyMoney</title>"))
                 .body(containsString("<div id=\"root\">"))
                 .body(containsString("index-J.js"))
                 .body(containsString("index-C.css"));
