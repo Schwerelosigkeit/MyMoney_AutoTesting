@@ -152,6 +152,7 @@ public class MainPage {
     }
 
     public SelenideElement findCategorySummaryItem(String categoryName) {
+        categoriesColumn1.shouldBe(visible);
         return categorySummaryItems.filterBy(text(categoryName)).first();
     }
 
@@ -286,7 +287,7 @@ public class MainPage {
     }
 
     /// Добавление расхода
-    @Step("Добавление расхода по категории и проверика обновления данных")
+    @Step("Добавление расхода по категории и проверка обновления данных")
     public MainPage addNewExpenseAndVerify(double amount, int expectedNewCount, String category) {
         double expectedBalance = getCurrentBalance() - amount;
         double expectedMonthExpenses = getCurrentMonthExpenses() + amount;
