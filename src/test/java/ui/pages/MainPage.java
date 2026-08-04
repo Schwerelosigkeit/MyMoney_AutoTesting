@@ -8,6 +8,7 @@ import io.qameta.allure.Step;
 import java.util.Locale;
 
 import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThanOrEqual;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -33,6 +34,8 @@ public class MainPage {
     @Step("Открытие главной страницы")
     public MainPage open() {
         Selenide.open("/");
+        balanceValue.shouldBe(visible);
+        transactionsList.shouldBe(visible);
         return this;
     }
 
@@ -96,10 +99,14 @@ public class MainPage {
 
     /// Геттеры
     public int getTransactionsCount() {
+        transactionsList.shouldBe(visible);
+        transactionItems.shouldHave(sizeGreaterThanOrEqual(0));
         return transactionItems.size();
     }
 
     public SelenideElement getTransactionByIndex(int index) {
+        transactionsList.shouldBe(visible);
+        transactionItems.shouldHave(sizeGreaterThanOrEqual(0));
         return transactionItems.get(index);
     }
 
@@ -128,14 +135,17 @@ public class MainPage {
     }
 
     public double getCurrentBalance() {
+        balanceValue.shouldBe(visible);
         return Double.parseDouble(balanceValue.text().trim());
     }
 
     public double getCurrentMonthExpenses() {
+        monthExpensesTitle.shouldBe(visible);
         return Double.parseDouble(monthExpensesTitle.text().replaceAll("[^0-9.]", "").replaceAll("\\.$", ""));
     }
 
     public double getCategorySummaryAmount(String categoryName) {
+        categoriesColumn1.shouldBe(visible);
         SelenideElement item = findCategorySummaryItem(categoryName);
         if (!item.is(visible)) return 0.0;
         return Double.parseDouble(item.text().replaceAll("[^0-9.]", "").replaceAll("\\.$", ""));
