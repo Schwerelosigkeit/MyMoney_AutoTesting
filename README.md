@@ -5,7 +5,7 @@
 > **Ветки репозитория**  
 > - `main` — базовая версия **без** Allure  
 > - `with-allure` — версия **с** Allure Report (рекомендуется для просмотра отчётов)
-> - `gh-pages` — отдельная ветка для публикации Allure Report на GitHub Pages (в ней лежат сгенерированные файлы отчёта HTML, JS, CSS, результаты тестов и т.д.) 
+> - `gh-pages` — ветка для публикации Allure Report на GitHub Pages (в ней лежат сгенерированные файлы отчёта) 
 
 ## Содержание:
 
@@ -45,17 +45,6 @@
 
 ## Технологический стек
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Java-24-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
-  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" alt="Maven"/>
-  <img src="https://img.shields.io/badge/Selenide-7.16-41B883?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenide"/>
-  <img src="https://img.shields.io/badge/TestNG-7.12-FF6A00?style=for-the-badge&logo=testng&logoColor=white" alt="TestNG"/>
-  <img src="https://img.shields.io/badge/Rest--Assured-6.0-5B9BD5?style=for-the-badge&logo=apache&logoColor=white" alt="Rest-Assured"/>
-  <img src="https://img.shields.io/badge/Allure-FF6A00?style=for-the-badge&logo=allure&logoColor=white" alt="Allure"/>
-  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
-  <img src="https://img.shields.io/badge/DataFaker-2.5-6DB33F?style=for-the-badge&logo=data&logoColor=white" alt="DataFaker"/>
-</p>
-
 В проекте используются:
 - **Java 24** + **Maven**
 - **Selenide** — UI-автотесты
@@ -71,45 +60,43 @@
 ## Запуск тестов
 
 ### Локально
-
-``bash
-# Все тесты (по testng.xml)
-mvn clean test
-для варианта с отчётом (Allure):
-mvn allure:report
+> Все тесты (по testng.xml)  
+(bash)  
+mvn clean test  
+Для варианта с отчётом (Allure):  
+mvn allure:report  
 mvn allure:serve
 
-# Headless-режим (CI)
-mvn clean test -Dheadless=true
-Через GitHub Actions
-Workflow .github/workflows/tests.yml запускается вручную (workflow_dispatch).
+### Headless-режим (CI)
+> mvn clean test -Dheadless=true  
+Через GitHub Actions  
+Workflow .github/workflows/tests.yml запускается вручную (workflow_dispatch).  
 После прогона отчёты Surefire загружаются как артефакты.
 
 ---
 
 
 ## Allure Report
-Полный отчёт доступен по ссылке:
-[Открыть Allure Report](https://schwerelosigkeit.github.io/MyMoney_AutoTesting/#suites/9e17cc8d04634948e1e41037d3b0b6ce/31531310850ef409/)
+Полный отчёт доступен по ссылке:  
+[Открыть Allure Report](https://schwerelosigkeit.github.io/MyMoney_AutoTesting/#suites/9e17cc8d04634948e1e41037d3b0b6ce/31531310850ef409/)  
 Рекомендуется смотреть отчёт онлайн — там есть подробности по каждому тесту, шагам и группировке.
 
 ---
 
 
 ## Структура проекта:
-textMyMoney_AutoTesting/
-├── .github/workflows/     # CI (GitHub Actions)
-├── src/test/java/
-│   ├── api/               # API-тесты (Rest-Assured)
-│   ├── data/              # Генераторы данных (DataFaker)
-│   └── ui/
-│       ├── pages/         # Page Objects (Selenide)
-│       └── tests/         # UI-тесты
-├── pom.xml
-└── testng.xml             # Сьюты и группы тестов
+textMyMoney_AutoTesting/  
+├── .github/workflows/     # CI (GitHub Actions)  
+├── src/test/java/  
+│   ├── api/               # API-тесты (Rest-Assured)  
+│   ├── data/              # Генераторы данных (DataFaker)  
+│   ├── ui/pages/         # Page Objects (Selenide)  
+│   └── ui/tests/         # UI-тесты  
+├── pom.xml  
+└── testng.xml             # Сьюты и группы тестов  
 
-🔗 Полезные ссылки
+### 🔗 Полезные ссылки
 
-Приложение: mymoney-webapp.onrender.com
-Исходники приложения: Schwerelosigkeit/MyMoney
-Allure-отчёт: ссылка выше
+> Приложение: [mymoney-webapp.onrender.com ](https://mymoney-webapp.onrender.com/)  
+> Исходники приложения: [Schwerelosigkeit/MyMoney](https://github.com/Schwerelosigkeit/MyMoney)  
+> Allure-отчёт: ссылка выше  
