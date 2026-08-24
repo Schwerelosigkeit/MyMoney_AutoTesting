@@ -52,7 +52,7 @@
 - **Rest-Assured** — API-тесты
 - **DataFaker** — генерация тестовых данных
 - **GitHub Actions** — CI (запуск тестов)
-- **Allure Report** — красивые отчёты (ветка `with-allure`)
+- **Allure Report** — интерактивные отчёты (ветка `with-allure`)
 
 ---
 
@@ -78,7 +78,7 @@ Workflow .github/workflows/tests.yml запускается вручную (work
 
 ## Allure Report
 Полный отчёт доступен по ссылке:  
-[Открыть Allure Report](https://schwerelosigkeit.github.io/MyMoney_AutoTesting/#suites/9e17cc8d04634948e1e41037d3b0b6ce/31531310850ef409/)  
+[Открыть Allure Report](https://schwerelosigkeit.github.io/MyMoney_AutoTesting/#behaviors)  
 Рекомендуется смотреть отчёт онлайн — там есть подробности по каждому тесту, шагам и группировке.
 
 ---
